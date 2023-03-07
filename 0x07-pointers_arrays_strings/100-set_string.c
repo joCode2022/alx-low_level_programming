@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * set_string - Set the string object
  *
