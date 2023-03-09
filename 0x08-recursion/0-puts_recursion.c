@@ -5,7 +5,7 @@
  *
  * @s: string to be printed
  *
- * Return: 0
+ * Return:0 sucess
  */
 
 void _puts_recursion(char *s)
@@ -17,5 +17,4 @@ _puts_recursion(s+1);
 }
 else
 _putchar('\n');
-
 }
