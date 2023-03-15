@@ -21,9 +21,11 @@ if (argc > 1)
 for (i = 1; i < argc; i++)
 {
 j = atoi(argv[1]), k = atoi(argv[2]);
-result = j * k;
+result = j *k;
 }
 printf("%d\n", result);
 }
 return (0);
 }
+
+
