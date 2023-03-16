@@ -1,4 +1,3 @@
-#ifndef MAIN_H
 #define MAIN_H
 
 void _puts(char *str);
@@ -12,5 +11,4 @@ int _atoi(const char *s);
 void print_int(unsigned long int n);
 
 
-#endif
 
