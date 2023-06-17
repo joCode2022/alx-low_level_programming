@@ -1,6 +1,5 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <limits.h>
 
 /**
  * *malloc_checked - allocated memory using malloc.
@@ -16,4 +15,3 @@ if (a == NULL)
 exit(98);
 return (a);
 }
-
