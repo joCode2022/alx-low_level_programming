@@ -1,34 +1,17 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
-  * get_bit - Gets the value of a bit at a given index
-  * @n: The number to find the index
-  * @index: The index to find
-  *
-  * Return: ...
-  */
-int get_bit(unsigned long int n, unsigned int index)
+ * set_bit - sets a bit at a given index to 1
+ * @n: pointer to the number to change
+ * @index: index of the bit to set to 1
+ *
+ * Return: 1 for success, -1 for failure
+ */
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int comp_i = 0;
+	if (index > 63)
+		return (-1);
 
-	while (n)
-	{
-		if (comp_i == index)
-		{
-			if (n % 2)
-				return (1);
-			else
-				return (0);
-		}
-
-		n = n / 2;
-		comp_i++;
-	}
-
-	if (index > comp_i && index < 63)
-		return (0);
-
-	return (-1);
+	*n = ((1UL << index) | *n);
+	return (1);
 }
