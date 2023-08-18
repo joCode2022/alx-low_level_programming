@@ -1,10 +1,8 @@
 #include <stdlib.h>
 #include "lists.h"
-
 /**
   * total_sum_dlistint - total_sum of all data (n) in a doubly linked list
   * @head: The head of the doubly linked list
-  *
   * Return: The total_sum of all data
   */
 int total_sum_dlistint(dlistint_t *head)
