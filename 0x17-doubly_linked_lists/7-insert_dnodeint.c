@@ -1,16 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "lists.h"
-
 /**
   * insert_dnodeint_at_index - Inserts a new node at a given position
   * @h: The head of the doubly linked list
-  * @idx: The index in which insert the new node
+  * @position: The index in which insert the new node
   * @n: The number to insert in the new node
-  *
   * Return: The address of the new node, or NULL if it failed
   */
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int position, int n)
 {
 	dlistint_t *current = NULL, *new_node = NULL;
 	unsigned int iter_times = 0, length = 0;
@@ -18,19 +16,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (h == NULL)
 		return (NULL);
 
-	if (*h == NULL && idx == 0)
+	if (*h == NULL && position == 0)
 		return (add_dnodeint(h, n));
 
 	length = dlistint_len(*h);
-	if (idx == 0)
+	if (position == 0)
 		return (add_dnodeint(h, n));
-	else if (length == idx)
+	else if (length == position)
 		return (add_dnodeint_end(h, n));
 
 	current = *h;
 	while (current != NULL)
 	{
-		if (iter_times == idx)
+		if (iter_times == position)
 		{
 			new_node = create_node(n, current, current->prev);
 			current->prev = new_node;
