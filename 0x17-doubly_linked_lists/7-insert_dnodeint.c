@@ -4,11 +4,11 @@
 /**
   * insert_dnodeint_at_index - Inserts a new node at a given position
   * @h: The head of the doubly linked list
-  * @position: The index in which insert the new node
-  * @n: The number to insert in the new node
+  * @idx: The index in which insert the new node
+  * @w: The number to insert in the new node
   * Return: The address of the new node, or NULL if it failed
   */
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int position, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int w)
 {
 	dlistint_t *current = NULL, *new_node = NULL;
 	unsigned int iter_times = 0, length = 0;
@@ -16,19 +16,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int position, int 
 	if (h == NULL)
 		return (NULL);
 
-	if (*h == NULL && position == 0)
-		return (add_dnodeint(h, n));
+	if (*h == NULL && idx == 0)
+		return (add_dnodeint(h, w));
 
 	length = dlistint_len(*h);
-	if (position == 0)
-		return (add_dnodeint(h, n));
-	else if (length == position)
-		return (add_dnodeint_end(h, n));
+	if (idx == 0)
+		return (add_dnodeint(h, w));
+	else if (length == idx)
+		return (add_dnodeint_end(h, w));
 
 	current = *h;
 	while (current != NULL)
 	{
-		if (iter_times == position)
+		if (iter_times == idx)
 		{
 			new_node = create_node(n, current, current->prev);
 			current->prev = new_node;
@@ -71,7 +71,7 @@ size_t dlistint_len(const dlistint_t *h)
   *
   * Return: The address of the new node created
   */
-dlistint_t *create_node(unsigned int n, void *next, void *prev)
+dlistint_t *create_node(unsigned int w, void *next, void *prev)
 {
 	dlistint_t *new_node = NULL;
 
