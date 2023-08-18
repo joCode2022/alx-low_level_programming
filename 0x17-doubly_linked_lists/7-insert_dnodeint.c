@@ -30,7 +30,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int w)
 	{
 		if (iter_times == idx)
 		{
-			new_node = create_node(n, current, current->prev);
+			new_node = create_node(w, current, current->prev);
 			current->prev = new_node;
 			current = new_node;
 			current->prev->next = new_node;
@@ -47,7 +47,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int w)
 /**
   * dlistint_len - Counts the number of elements in a doubly linked list
   * @h: The double linked list to count
-  *
   * Return: Number of elements in the doubly linked list
   */
 size_t dlistint_len(const dlistint_t *h)
@@ -65,10 +64,9 @@ size_t dlistint_len(const dlistint_t *h)
 
 /**
   * create_node - Create a new node with values
-  * @n: The number of the new node
+  * @w: The number of the new node
   * @next: The next node of the new node
   * @prev: The previous node of the new node
-  *
   * Return: The address of the new node created
   */
 dlistint_t *create_node(unsigned int w, void *next, void *prev)
@@ -79,7 +77,7 @@ dlistint_t *create_node(unsigned int w, void *next, void *prev)
 	if (new_node == NULL)
 		return (NULL);
 
-	new_node->n = n;
+	new_node->w = w;
 	new_node->next = next;
 	new_node->prev = prev;
 	return (new_node);
