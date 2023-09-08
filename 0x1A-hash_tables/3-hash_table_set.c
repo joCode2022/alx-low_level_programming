@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-
 /**
  * make_hash_node - creates a new hash node
  * @key: key for the node
@@ -10,7 +9,6 @@
 hash_node_t *make_hash_node(const char *key, const char *value)
 {
 	hash_node_t *node;
-
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (NULL);
@@ -30,8 +28,6 @@ hash_node_t *make_hash_node(const char *key, const char *value)
 	node->next = NULL;
 	return (node);
 }
-
-
 /**
  * hash_table_set - sets a key to a value in the hash table
  * @ht: hash table to add elemt to
