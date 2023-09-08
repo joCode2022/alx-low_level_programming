@@ -1,12 +1,12 @@
 #include "hash_tables.h"
 /**
- * make_hash_node - creates a new hash node
+ * build_hash_node - creates a new hash nodebuild_hash_node
  * @key: key for the node
  * @value: for the node
  *
  * Return: the new node, or NULL on failure
  */
-hash_node_t *make_hash_node(const char *key, const char *value)
+hash_node_t *build_hash_node(const char *key, const char *value)
 {
 	hash_node_t *node;
 	node = malloc(sizeof(hash_node_t));
@@ -60,7 +60,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		tmp = tmp->next;
 	}
-	hash_node = make_hash_node(key, value);
+	hash_node = build_hash_node(key, value);
 	if (hash_node == NULL)
 		return (0);
 	hash_node->next = ht->array[index];
